@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://ypp68qml6tfx"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_bojnc"]
+[ext_resource type="FontFile" uid="uid://gwa4vd3g72qm" path="res://Assets/SPACE.ttf" id="1_hqqiu"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bojnc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hqqiu")
+theme_override_font_sizes/font_size = 36
+text = "Welcome to the Space Shooter!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.602
+anchor_right = 0.5
+anchor_bottom = 0.602
+offset_left = -98.0
+offset_top = -20.096
+offset_right = 102.0
+offset_bottom = 19.904
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hqqiu")
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.602
+anchor_right = 0.5
+anchor_bottom = 0.602
+offset_left = -98.0
+offset_top = 59.904
+offset_right = 102.0
+offset_bottom = 99.904
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hqqiu")
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
