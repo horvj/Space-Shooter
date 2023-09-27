@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3k852jgmr0e7"]
+[gd_scene load_steps=9 format=3 uid="uid://b3k852jgmr0e7"]
 
 [ext_resource type="PackedScene" uid="uid://cnulmu7i8ph7w" path="res://Player/player.tscn" id="1_fsgei"]
 [ext_resource type="PackedScene" uid="uid://cr8psynirul7j" path="res://Asteroid/asteroid.tscn" id="2_ghkoq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://UI/HUD.gd" id="5_66sqc"]
 [ext_resource type="FontFile" uid="uid://gwa4vd3g72qm" path="res://Assets/SPACE.ttf" id="6_b41eg"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_ice1h"]
+[ext_resource type="Texture2D" uid="uid://dy271idf7r6qo" path="res://Assets/bkgd_1.png" id="8_yc8vh"]
 
 [node name="Game" type="Node2D"]
 
@@ -14,9 +15,11 @@
 
 [node name="Asteroid" parent="Asteroid_Container" instance=ExtResource("2_ghkoq")]
 position = Vector2(100, 100)
+scale = Vector2(3, 3)
 
 [node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource("2_ghkoq")]
 position = Vector2(900, 600)
+scale = Vector2(3, 3)
 
 [node name="Effects" type="Node2D" parent="."]
 
@@ -141,6 +144,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_b41eg")
 text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1999, 1282.5)
+scale = Vector2(2, 1.451)
+texture = ExtResource("8_yc8vh")
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_restart_pressed"]
